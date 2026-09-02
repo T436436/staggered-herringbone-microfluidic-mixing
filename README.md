@@ -62,26 +62,6 @@ The simulations used the following STAR-CCM+ physics models:
 
 Water was used as the continuous phase. Two Lagrangian particle phases represented the red and green species. Each particle was modeled as a **1 µm solid sphere** transported by the continuous flow. Particle-wall interactions were assigned a rebound condition with a restitution coefficient of **1**, corresponding to an ideal elastic rebound without sticking.
 
-### 3. Governing Equations
-
-The continuous phase was modeled as incompressible laminar flow:
-
-$$
-\nabla \cdot \mathbf{u}=0
-$$
-
-$$
-\rho\left(\frac{\partial \mathbf{u}}{\partial t}+\mathbf{u}\cdot\nabla\mathbf{u}\right)
-=-\nabla p+\mu\nabla^2\mathbf{u}+\rho\mathbf{g}
-$$
-
-Particle trajectories were calculated from the Lagrangian momentum balance:
-
-$$
-m_p\frac{d\mathbf{v}_p}{dt}=\mathbf{F}_s+\mathbf{F}_b
-$$
-
-where `m_p` and `v_p` are the particle mass and velocity, while `F_s` and `F_b` represent surface and body forces acting on the particle.
 
 ### 4. Solution Procedure
 
