@@ -46,8 +46,6 @@ The rectangular microchannel contains two inlets, one outlet, and staggered herr
 | Groove intersection angle | 90° |
 | Asymmetry factor | 0.67 |
 
-The resulting non-dimensional design parameters were `w/h = 3`, `α = 0.26`, `b = 0.67`, `w_g/λ = 0.5`, and `N_g = 6`.
-
 <p align="center">
   <img src="Figure_02_Mixing_Channel_Geometry.png" alt="Figure_02_Mixing_Channel_Geometry.png" width="850">
 </p>
@@ -56,12 +54,9 @@ The resulting non-dimensional design parameters were `w/h = 3`, `α = 0.26`, `b 
 
 The simulations used the following STAR-CCM+ physics models:
 
-- Three-dimensional flow
 - Laminar flow
-- Segregated flow solver
 - Lagrangian multiphase model
 - Free-stream particle phase
-- Solid spherical particles
 - Particle drag force
 - Particle track-file model
 
