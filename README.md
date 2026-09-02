@@ -210,23 +210,7 @@ Within this limited velocity range, increasing the velocity did not substantiall
 
 ## Suggested Repository Structure
 
-```text
-staggered-herringbone-mixing-cfd/
-|-- README.md
-|-- images/
-|   |-- Figure_02_Mixing_Channel_Geometry.png
-|   |-- Figure_03_Mesh_Structure.png
-|   |-- Figure_04_Grid_Independence_Velocity.png
-|   |-- Figure_07_Timestep_Entropy.png
-|   |-- Figure_08_Particle_Mixing_0.005ms.png
-|   |-- Figure_09_Particle_Mixing_0.001ms.png
-|   `-- Figure_10_Velocity_Entropy_Comparison.png
-|-- geometry/
-|-- mesh/
-|-- results/
-|-- matlab/
-`-- docs/
-```
+
 
 ## Reference
 
