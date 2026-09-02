@@ -143,7 +143,7 @@ Time steps of **0.05, 0.075, and 0.1 s** were tested at an inlet velocity of **0
 Entropy increased from Stage 0 to Stage 3 for every tested time step. However, the 0.1 s time step underpredicted the Stage 3 entropy relative to the smaller time steps. The **0.05 s time step** produced the most consistent result and was therefore selected for the final simulations.
 
 <p align="center">
-  <img src="images/Figure_07_Timestep_Entropy.png" alt="Mixing entropy at different stages and time steps" width="760">
+  <img src="Figure_07_Timestep_Entropy.png" alt="Mixing entropy at different stages and time steps" width="760">
 </p>
 
 ## Results and Discussion
