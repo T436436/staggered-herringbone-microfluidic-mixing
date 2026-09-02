@@ -50,7 +50,7 @@ The rectangular microchannel contains two inlets, one outlet, and staggered herr
 The resulting non-dimensional design parameters were `w/h = 3`, `α = 0.26`, `b = 0.67`, `w_g/λ = 0.5`, and `N_g = 6`.
 
 <p align="center">
-  <img src="Figure_02_Mixing_Channel_Geometry" alt="Staggered herringbone mixing-channel geometry" width="850">
+  <img src="Figure_02_Mixing_Channel_Geometry" alt="Figure_02_Mixing_Channel_Geometry" width="850">
 </p>
 
 ### 2. Flow and Particle Models
