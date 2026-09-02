@@ -177,17 +177,7 @@ Within this limited velocity range, increasing the velocity did not substantiall
 - **Flow modeling:** Three-dimensional incompressible laminar flow
 - **Particle modeling:** Lagrangian multiphase tracking
 - **Meshing:** Polyhedral mesher, surface remesher, and volumetric refinement
-- **Verification:** Mesh- and time-step-independence studies
 - **Postprocessing:** Particle-position extraction and XY plots
 - **Data analysis:** MATLAB and normalized Shannon entropy
 - **Application:** Passive microfluidic mixing
 
-## Suggested Repository Structure
-
-
-
-## Reference
-
-This repository summarizes the mixing-simulation portion of:
-
-T. Islam, *Modeling and Manufacturing of Hier
