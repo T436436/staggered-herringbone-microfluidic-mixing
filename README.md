@@ -133,7 +133,7 @@ A polyhedral volume mesher and surface remesher were used with surface and volum
 Velocity profiles were sampled across the channel width at `x = 15.75 mm`. The change from Mesh 4 to Mesh 5 was approximately **0.61%, 0.69%, and 1.08%** at transverse positions of 187.5, 375.0, and 562.5 µm, respectively. Because further refinement produced only small changes, **Mesh 4 with 682,332 cells** was selected for the remaining simulations.
 
 <p align="center">
-  <img src="images/Figure_04_Grid_Independence_Velocity.png" alt="Velocity profiles used for the mesh-independence study" width="760">
+  <img src="Figure_10_Velocity_Entropy_Comparison.png" alt="Velocity profiles used for the mesh-independence study" width="760">
 </p>
 
 ### 7. Time-Step-Independence Study
