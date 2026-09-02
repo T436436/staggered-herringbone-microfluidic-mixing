@@ -13,7 +13,6 @@ The channel was designed in **SOLIDWORKS 2024**, simulated in **STAR-CCM+**, and
 - Develop a three-dimensional model of a staggered herringbone micromixer.
 - Track the downstream redistribution of two initially separated particle populations.
 - Quantify mixing quality at successive stages using normalized mixing entropy.
-- Verify mesh and time-step independence before analyzing the final results.
 - Determine whether changing the inlet velocity from 0.001 to 0.005 m/s substantially affects final mixing.
 
 ## Methodology
