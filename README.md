@@ -130,10 +130,6 @@ The mixing results at **0.001 and 0.005 m/s** followed the same overall trend: e
 
 Within this limited velocity range, increasing the velocity did not substantially change the final mixing performance. The channel geometry and repeated herringbone-induced redistribution were therefore more influential than the tested velocity change in determining the final entropy.
 
-<p align="center">
-  <img src="Figure_09_Particle_Mixing_0.001ms.png" alt="Comparison of mixing entropy at inlet velocities of 0.001 and 0.005 meters per second" width="760">
-</p>
-
 ## Key Findings
 
 - The staggered herringbone geometry successfully redistributed two initially separated particle populations under laminar-flow conditions.
