@@ -124,19 +124,11 @@ Before the herringbone section, the red and green particles remained primarily s
 
 The entropy increased by **0.6968** between Stage 0 and Stage 3. More than half of the ideal normalized mixing level was reached after the first cycle, and the final entropy approached **0.8** after three cycles. The monotonic increase confirms that successive herringbone stages progressively enhanced particle redistribution.
 
-### Effect of Inlet Velocity
-
-The mixing results at **0.001 and 0.005 m/s** followed the same overall trend: entropy increased through each downstream stage. The 0.005 m/s case produced slightly higher entropy at the intermediate stages, but the two cases approached nearly the same entropy at Stage 3.
-
-Within this limited velocity range, increasing the velocity did not substantially change the final mixing performance. The channel geometry and repeated herringbone-induced redistribution were therefore more influential than the tested velocity change in determining the final entropy.
-
 ## Key Findings
 
 - The staggered herringbone geometry successfully redistributed two initially separated particle populations under laminar-flow conditions.
 - Normalized mixing entropy increased from **0.1021 at Stage 0** to **0.7989 at Stage 3** for the 0.005 m/s case.
 - One mixing cycle raised entropy above 0.5, while three cycles produced a final entropy close to 0.8.
-- A **682,332-cell mesh** provided an adequate grid-independent solution based on the monitored velocity profiles.
-- A time step of **0.05 s** was required to avoid the Stage 3 underprediction observed with the 0.1 s time step.
 - Increasing inlet velocity from 0.001 to 0.005 m/s produced slightly greater intermediate-stage entropy but little difference in final Stage 3 entropy.
 
 > **Main conclusion:** Successive staggered herringbone stages substantially improved particle mixing, while the tested change in inlet velocity had only a limited effect on the final mixing entropy.
