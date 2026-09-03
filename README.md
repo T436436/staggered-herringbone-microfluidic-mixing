@@ -137,18 +137,5 @@ The entropy increased by **0.6968** between Stage 0 and Stage 3. More than half 
 
 - The particles were numerical surrogates for species or enzymes; experimental validation was outside the scope of the simulation.
 - Only two inlet velocities were compared, so the result should not be generalized beyond the tested range.
-- Different particle-injection counts were used for the two velocity cases, which should be standardized in future comparisons.
 - The mesh-independence assessment focused on velocity profiles at selected transverse locations.
 - A wider range of time steps, velocities, particle sizes, and transport forces should be evaluated in future studies.
-
-## Software and Skills Demonstrated
-
-- **CAD:** SOLIDWORKS 2024
-- **CFD:** Simcenter STAR-CCM+ 2406
-- **Flow modeling:** Three-dimensional incompressible laminar flow
-- **Particle modeling:** Lagrangian multiphase tracking
-- **Meshing:** Polyhedral mesher, surface remesher, and volumetric refinement
-- **Postprocessing:** Particle-position extraction and XY plots
-- **Data analysis:** MATLAB and normalized Shannon entropy
-- **Application:** Passive microfluidic mixing
-
