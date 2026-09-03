@@ -56,9 +56,6 @@ The simulations used the following STAR-CCM+ physics models:
 
 - Laminar flow
 - Lagrangian multiphase model
-- Free-stream particle phase
-- Particle drag force
-- Particle track-file model
 
 Water was used as the continuous phase. Two Lagrangian particle phases represented the red and green species. Each particle was modeled as a **1 µm solid sphere** transported by the continuous flow. Particle-wall interactions were assigned a rebound condition with a restitution coefficient of **1**, corresponding to an ideal elastic rebound without sticking.
 
@@ -94,11 +91,7 @@ The entropy was normalized to range from 0 to 1:
 
 ### 6. Mesh-Independence Study
 
-A polyhedral volume mesher and surface remesher were used with surface and volume growth rates of **1.1**. Volumetric refinement was applied around the herringbone structures. Five MESH sizes were tested using water at an inlet velocity of **0.001 m/s**.
-
-
-**Mesh 4 with 682,332 cells** was selected for the remaining simulations.
-
+A polyhedral volume mesher and surface remesher were used with surface and volume growth rates of **1.1**. Volumetric refinement was applied around the herringbone structures. Five mesh sizes were tested using water at an inlet velocity of **0.001 m/s**.
 
 ### 7. Time-Step-Independence Study
 
