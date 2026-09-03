@@ -131,7 +131,7 @@ The entropy increased by **0.6968** between Stage 0 and Stage 3. More than half 
 - One mixing cycle raised entropy above 0.5, while three cycles produced a final entropy close to 0.8.
 - Increasing inlet velocity from 0.001 to 0.005 m/s produced slightly greater intermediate-stage entropy but little difference in final Stage 3 entropy.
 
-> **Main conclusion:** Successive staggered herringbone stages substantially improved particle mixing, while the tested change in inlet velocity had only a limited effect on the final mixing entropy.
+**Main conclusion:** Successive staggered herringbone stages substantially improved particle mixing, while the tested change in inlet velocity had only a limited effect on the final mixing entropy.
 
 ## Limitations
 
