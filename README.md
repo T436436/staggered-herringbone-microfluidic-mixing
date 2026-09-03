@@ -94,21 +94,11 @@ The entropy was normalized to range from 0 to 1:
 
 ### 6. Mesh-Independence Study
 
-A polyhedral volume mesher and surface remesher were used with surface and volume growth rates of **1.1**. Volumetric refinement was applied around the herringbone structures. Five base sizes were tested using water at an inlet velocity of **0.001 m/s**.
+A polyhedral volume mesher and surface remesher were used with surface and volume growth rates of **1.1**. Volumetric refinement was applied around the herringbone structures. Five MESH sizes were tested using water at an inlet velocity of **0.001 m/s**.
 
-| Mesh | Base size (µm) | Number of cells |
-|---:|---:|---:|
-| 1 | 50 | 124,695 |
-| 2 | 40 | 166,397 |
-| 3 | 30 | 330,132 |
-| **4** | **20** | **682,332** |
-| 5 | 15 | 1,425,712 |
 
-Velocity profiles were sampled across the channel width at `x = 15.75 mm`. The change from Mesh 4 to Mesh 5 was approximately **0.61%, 0.69%, and 1.08%** at transverse positions of 187.5, 375.0, and 562.5 µm, respectively. Because further refinement produced only small changes, **Mesh 4 with 682,332 cells** was selected for the remaining simulations.
+**Mesh 4 with 682,332 cells** was selected for the remaining simulations.
 
-<p align="center">
-  <img src="Figure_10_Velocity_Entropy_Comparison.png" alt="Velocity profiles used for the mesh-independence study" width="760">
-</p>
 
 ### 7. Time-Step-Independence Study
 
