@@ -2,6 +2,12 @@
 
 Three-dimensional CFD study of particle mixing in a staggered herringbone microchannel using laminar flow and Lagrangian particle tracking in **Simcenter STAR-CCM+ 2406**.
 
+<p align="center">
+  <img src="Figure_08_Particle_Mixing_0.005ms.png" alt="Red and green particles mixing through Stages 0 to 3" width="800">
+</p>
+
+**Highlights:** normalized mixing entropy rose from **0.10 → 0.80** over three herringbone cycles · mesh- and time-step-independent solution · two inlet velocities compared
+
 ## Project Overview
 
 This project investigates how staggered herringbone grooves enhance mixing between two initially segregated streams in a laminar microchannel. Red and green 1 µm particles were used as numerical tracers representing two species. Their trajectories were tracked through successive mixing stages, and the degree of mixing was quantified using normalized Shannon entropy.
@@ -13,6 +19,7 @@ The channel was designed in **SOLIDWORKS 2024**, simulated in **STAR-CCM+**, and
 - Develop a three-dimensional model of a staggered herringbone micromixer.
 - Track the downstream redistribution of two initially separated particle populations.
 - Quantify mixing quality at successive stages using normalized mixing entropy.
+- Verify mesh and time-step independence before analyzing the final results.
 - Determine whether changing the inlet velocity from 0.001 to 0.005 m/s substantially affects final mixing.
 
 ## Methodology
@@ -46,19 +53,47 @@ The rectangular microchannel contains two inlets, one outlet, and staggered herr
 | Groove intersection angle | 90° |
 | Asymmetry factor | 0.67 |
 
+The resulting non-dimensional design parameters were `w/h = 3`, `α = 0.26`, `b = 0.67`, `w_g/λ = 0.5`, and `N_g = 6`.
+
 <p align="center">
-  <img src="Figure_02_Mixing_Channel_Geometry.png" alt="Figure_02_Mixing_Channel_Geometry.png" width="850">
+  <img src="Figure_02_Mixing_Channel_Geometry.png" alt="Staggered herringbone mixing-channel geometry" width="850">
 </p>
 
 ### 2. Flow and Particle Models
 
 The simulations used the following STAR-CCM+ physics models:
 
+- Three-dimensional flow
 - Laminar flow
+- Segregated flow solver
 - Lagrangian multiphase model
+- Free-stream particle phase
+- Solid spherical particles
+- Particle drag force
+- Particle track-file model
 
 Water was used as the continuous phase. Two Lagrangian particle phases represented the red and green species. Each particle was modeled as a **1 µm solid sphere** transported by the continuous flow. Particle-wall interactions were assigned a rebound condition with a restitution coefficient of **1**, corresponding to an ideal elastic rebound without sticking.
 
+### 3. Governing Equations
+
+The continuous phase was modeled as incompressible laminar flow:
+
+$$
+\nabla \cdot \mathbf{u}=0
+$$
+
+$$
+\rho\left(\frac{\partial \mathbf{u}}{\partial t}+\mathbf{u}\cdot\nabla\mathbf{u}\right)
+=-\nabla p+\mu\nabla^2\mathbf{u}+\rho\mathbf{g}
+$$
+
+Particle trajectories were calculated from the Lagrangian momentum balance:
+
+$$
+m_p\frac{d\mathbf{v}_p}{dt}=\mathbf{F}_s+\mathbf{F}_b
+$$
+
+where `m_p` and `v_p` are the particle mass and velocity, while `F_s` and `F_b` represent surface and body forces acting on the particle.
 
 ### 4. Solution Procedure
 
@@ -91,7 +126,21 @@ The entropy was normalized to range from 0 to 1:
 
 ### 6. Mesh-Independence Study
 
-A polyhedral volume mesher and surface remesher were used with surface and volume growth rates of **1.1**. Volumetric refinement was applied around the herringbone structures. Five mesh sizes were tested using water at an inlet velocity of **0.001 m/s**.
+A polyhedral volume mesher and surface remesher were used with surface and volume growth rates of **1.1**. Volumetric refinement was applied around the herringbone structures. Five base sizes were tested using water at an inlet velocity of **0.001 m/s**.
+
+| Mesh | Base size (µm) | Number of cells |
+|---:|---:|---:|
+| 1 | 50 | 124,695 |
+| 2 | 40 | 166,397 |
+| 3 | 30 | 330,132 |
+| **4** | **20** | **682,332** |
+| 5 | 15 | 1,425,712 |
+
+Velocity profiles were sampled across the channel width at `x = 15.75 mm`. The change from Mesh 4 to Mesh 5 was approximately **0.61%, 0.69%, and 1.08%** at transverse positions of 187.5, 375.0, and 562.5 µm, respectively. Because further refinement produced only small changes, **Mesh 4 with 682,332 cells** was selected for the remaining simulations.
+
+<p align="center">
+  <img src="Figure_03_Mesh_Structure.png" alt="Polyhedral mesh of the herringbone channel" width="760">
+</p>
 
 ### 7. Time-Step-Independence Study
 
@@ -124,18 +173,78 @@ Before the herringbone section, the red and green particles remained primarily s
 
 The entropy increased by **0.6968** between Stage 0 and Stage 3. More than half of the ideal normalized mixing level was reached after the first cycle, and the final entropy approached **0.8** after three cycles. The monotonic increase confirms that successive herringbone stages progressively enhanced particle redistribution.
 
+### Effect of Inlet Velocity
+
+The mixing results at **0.001 and 0.005 m/s** followed the same overall trend: entropy increased through each downstream stage. The 0.005 m/s case produced slightly higher entropy at the intermediate stages, but the two cases approached nearly the same entropy at Stage 3.
+
+Within this limited velocity range, increasing the velocity did not substantially change the final mixing performance. The channel geometry and repeated herringbone-induced redistribution were therefore more influential than the tested velocity change in determining the final entropy.
+
+<p align="center">
+  <img src="Figure_09_Particle_Mixing_0.001ms.png" alt="Particle distributions through mixing Stages 0 to 3 at 0.001 meters per second" width="800">
+</p>
+
+<p align="center">
+  <img src="Figure_10_Velocity_Entropy_Comparison.png" alt="Comparison of mixing entropy at inlet velocities of 0.001 and 0.005 meters per second" width="760">
+</p>
+
 ## Key Findings
 
 - The staggered herringbone geometry successfully redistributed two initially separated particle populations under laminar-flow conditions.
 - Normalized mixing entropy increased from **0.1021 at Stage 0** to **0.7989 at Stage 3** for the 0.005 m/s case.
 - One mixing cycle raised entropy above 0.5, while three cycles produced a final entropy close to 0.8.
+- A **682,332-cell mesh** provided an adequate grid-independent solution based on the monitored velocity profiles.
+- A time step of **0.05 s** was required to avoid the Stage 3 underprediction observed with the 0.1 s time step.
 - Increasing inlet velocity from 0.001 to 0.005 m/s produced slightly greater intermediate-stage entropy but little difference in final Stage 3 entropy.
 
-**Main conclusion:** Successive staggered herringbone stages substantially improved particle mixing, while the tested change in inlet velocity had only a limited effect on the final mixing entropy.
+> **Main conclusion:** Successive staggered herringbone stages substantially improved particle mixing, while the tested change in inlet velocity had only a limited effect on the final mixing entropy.
 
 ## Limitations
 
 - The particles were numerical surrogates for species or enzymes; experimental validation was outside the scope of the simulation.
 - Only two inlet velocities were compared, so the result should not be generalized beyond the tested range.
+- Different particle-injection counts were used for the two velocity cases, which should be standardized in future comparisons.
 - The mesh-independence assessment focused on velocity profiles at selected transverse locations.
 - A wider range of time steps, velocities, particle sizes, and transport forces should be evaluated in future studies.
+
+## Software and Skills Demonstrated
+
+- **CAD:** SOLIDWORKS 2024
+- **CFD:** Simcenter STAR-CCM+ 2406
+- **Flow modeling:** Three-dimensional incompressible laminar flow
+- **Particle modeling:** Lagrangian multiphase tracking
+- **Meshing:** Polyhedral mesher, surface remesher, and volumetric refinement
+- **Verification:** Mesh- and time-step-independence studies
+- **Postprocessing:** Particle-position extraction and XY plots
+- **Data analysis:** MATLAB and normalized Shannon entropy
+- **Application:** Passive microfluidic mixing
+
+## Repository Contents
+
+| File | Description |
+|---|---|
+| `Figure_02_Mixing_Channel_Geometry.png` | Channel geometry and herringbone layout |
+| `Figure_03_Mesh_Structure.png` | Polyhedral mesh used for the simulations |
+| `Figure_07_Timestep_Entropy.png` | Time-step independence study |
+| `Figure_08_Particle_Mixing_0.005ms.png` | Particle distributions, Stages 0–3, 0.005 m/s |
+| `Figure_09_Particle_Mixing_0.001ms.png` | Particle distributions, Stages 0–3, 0.001 m/s |
+| `Figure_10_Velocity_Entropy_Comparison.png` | Entropy comparison between inlet velocities |
+
+
+## Reference
+
+This repository summarizes the mixing-simulation portion of:
+
+T. Islam, *Modeling and Manufacturing of Hierarchically Structured Multi-Materials via Microfluidics*, M.S. thesis, Montana State University, 2025.
+
+## Acknowledgment
+
+This work was supported by the National Science Foundation under Award No. **2144845**.
+
+## Related Projects
+
+- [Core–sheath flow simulation (VOF, STAR-CCM+)](https://github.com/T436436/Core-Sheath-Microfluidic-Flow-Simulation-Using-VOF-in-STAR-CCM-) — hydrodynamic focusing in the same channel family
+- [Fabrication of the microfluidic device](https://github.com/T436436/Fabrication-of-microfluidic-device) — 3D-printed mold and PDMS device built from this geometry
+
+## Contact
+
+Touhid Islam · tislam@wpi.edu
